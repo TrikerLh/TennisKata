@@ -16,6 +16,7 @@ namespace TennisKata.Tests {
     }
 
     public class Score {
-        public string Result { get; set; }
+
+        public string Result => "love";
     }
 }
