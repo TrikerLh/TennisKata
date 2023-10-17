@@ -26,13 +26,20 @@ namespace TennisKata.Tests {
         }
     }
 
-    public class Score {
+    public class Score
+    {
 
-        public string Result => "love";
+        private string result = "love";
 
-        public object Increment()
+        public string Result
         {
-            throw new NotImplementedException();
+            get => result;
+            set => result = value;
+        }
+
+        public void Increment()
+        {
+            result = "15";
         }
     }
 }
