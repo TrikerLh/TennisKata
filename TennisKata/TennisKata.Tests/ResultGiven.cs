@@ -18,13 +18,18 @@ namespace TennisKata.Tests {
             result.Should().Be("love");
         }
 
-        [Test]
-        public void Score_result_should_be_15_when_incrementing_one_time()
+        [TestCase(1, "15")]
+        [TestCase(2, "30")]
+
+        public void Score_result_should_be_15_when_incrementing_one_time(int times, string expectedResult)
         {
-            score.Increment();
+            for (var i = 0; i < times; i++)
+            {
+                score.Increment();
+            }
             var result = score.Result;
 
-            result.Should().Be("15");
+            result.Should().Be(expectedResult);
         }
 
         [Test]
