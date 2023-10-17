@@ -21,12 +21,19 @@ namespace TennisKata.Tests {
         [Test]
         public void Score_result_should_be_15_when_incrementing_one_time()
         {
-            
-
             score.Increment();
             var result = score.Result;
 
             result.Should().Be("15");
+        }
+
+        [Test]
+        public void Score_result_should_be_30_when_incrementing_twice() {
+            score.Increment();
+            score.Increment();
+            var result = score.Result;
+
+            result.Should().Be("30");
         }
     }
 
