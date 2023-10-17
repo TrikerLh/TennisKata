@@ -50,7 +50,10 @@ namespace TennisKata.Tests {
 
         public void Increment()
         {
-            _result = "15";
+            if (_result == "15")
+                _result = "30";
+            else
+                _result = "15";
         }
     }
 }
