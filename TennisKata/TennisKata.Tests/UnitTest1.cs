@@ -13,10 +13,26 @@ namespace TennisKata.Tests {
 
             result.Should().Be("love");
         }
+
+        [Test]
+        public void Score_result_should_be_15_when_incrementing_one_time()
+        {
+            var score = new Score();
+
+            score.Increment();
+            var result = score.Result;
+
+            result.Should().Be("15");
+        }
     }
 
     public class Score {
 
         public string Result => "love";
+
+        public object Increment()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
