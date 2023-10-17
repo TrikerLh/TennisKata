@@ -20,8 +20,8 @@ namespace TennisKata.Tests {
 
         [TestCase(1, "15")]
         [TestCase(2, "30")]
-
-        public void Score_result_should_be_15_when_incrementing_one_time(int times, string expectedResult)
+        [TestCase(3, "40")]
+        public void Test_increment(int times, string expectedResult)
         {
             for (var i = 0; i < times; i++)
             {
@@ -33,22 +33,11 @@ namespace TennisKata.Tests {
         }
 
         [Test]
-        public void Score_result_should_be_30_when_incrementing_twice() {
-            score.Increment();
-            score.Increment();
-            var result = score.Result;
+        public void True_if_are_equal()
+        {
+            var result = score.IsEqual(new Score());
 
-            result.Should().Be("30");
-        }
-
-        [Test]
-        public void Score_result_should_be_40_when_incrementing_three_times() {
-            score.Increment();
-            score.Increment();
-            score.Increment();
-            var result = score.Result;
-
-            result.Should().Be("40");
+            result.Should().BeTrue();
         }
     }
 
@@ -71,6 +60,11 @@ namespace TennisKata.Tests {
                 _result = "40";
             else
                 _result = "15";
+        }
+
+        public bool IsEqual(Score score)
+        {
+            throw new NotImplementedException();
         }
     }
 }
