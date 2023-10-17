@@ -62,6 +62,8 @@ namespace TennisKata.Tests {
         {
             if (_result == "15")
                 _result = "30";
+            else if (_result == "30")
+                _result = "40";
             else
                 _result = "15";
         }
