@@ -19,6 +19,6 @@ namespace TennisKata.Tests {
 
     public class Game
     {
-        public string Result { get; set; }
+        public string Result => "Player1:love-Player2:love";
     }
 }
