@@ -64,7 +64,7 @@ namespace TennisKata.Tests {
 
         public bool IsEqual(Score score)
         {
-            throw new NotImplementedException();
+            return _result == score.Result;
         }
     }
 }
