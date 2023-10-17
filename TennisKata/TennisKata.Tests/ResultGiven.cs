@@ -35,7 +35,7 @@ namespace TennisKata.Tests {
         [Test]
         public void True_if_are_equal()
         {
-            var result = score.IsEqual(new Score());
+            var result = score == new Score();
 
             result.Should().BeTrue();
         }
@@ -62,9 +62,14 @@ namespace TennisKata.Tests {
                 _result = "15";
         }
 
-        public bool IsEqual(Score score)
+        public static bool operator == (Score score, Score other)
         {
-            return _result == score.Result;
+            return score.Result == other.Result;
+        }
+
+        public static bool operator !=(Score score, Score other)
+        {
+            return !(score == other);
         }
     }
 }
