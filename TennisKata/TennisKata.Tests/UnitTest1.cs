@@ -35,6 +35,16 @@ namespace TennisKata.Tests {
 
             result.Should().Be("30");
         }
+
+        [Test]
+        public void Score_result_should_be_40_when_incrementing_three_times() {
+            score.Increment();
+            score.Increment();
+            score.Increment();
+            var result = score.Result;
+
+            result.Should().Be("40");
+        }
     }
 
     public class Score
