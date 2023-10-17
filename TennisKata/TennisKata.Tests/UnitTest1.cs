@@ -1,15 +1,19 @@
 using FluentAssertions;
 
 namespace TennisKata.Tests {
-    public class ResultGiven {
-        [SetUp]
+    public class ResultGiven
+    {
+        private Score score;
+
+        [SetUp] 
         public void Setup() {
+            score = new Score();
         }
 
         [Test]
         public void Love_should_be_the_first_score()
         {
-            var result = new Score().Result;
+            var result = score.Result;
 
             result.Should().Be("love");
         }
@@ -17,7 +21,7 @@ namespace TennisKata.Tests {
         [Test]
         public void Score_result_should_be_15_when_incrementing_one_time()
         {
-            var score = new Score();
+            
 
             score.Increment();
             var result = score.Result;
@@ -29,17 +33,17 @@ namespace TennisKata.Tests {
     public class Score
     {
 
-        private string result = "love";
+        private string _result = "love";
 
         public string Result
         {
-            get => result;
-            set => result = value;
+            get => _result;
+            set => _result = value;
         }
 
         public void Increment()
         {
-            result = "15";
+            _result = "15";
         }
     }
 }
